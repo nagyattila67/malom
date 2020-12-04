@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>malom</title>
+    <link rel="stylesheet" href="css/selectors.css">
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap-4.5.3-dist/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container container-fluid">
+
+        <div class="row">
+            <div class="col-2 col-sm-2 col-md-2 col-lg-2">
+            </div>
+            <div class="col-8 col-sm-8 col-md-8 col-lg-8">
+                <table>
+                    <thead>
+                        <tr>
+                            <!--a bűvös négyzet oszlopai, sorai átlói mindig 15, más cellahármas nem-->
+                            <td class="mill" name="4" onclick="kiKlikkel(this)">_</td>
+                            <td class="mill" name="9" onclick="kiKlikkel(this)">_</td>
+                            <td class="mill" name="2" onclick="kiKlikkel(this)">_</td>
+                        </tr>
+                        <tr>
+                            <td class="mill" name="3" onclick="kiKlikkel(this)">_</td>
+                            <td class="mill" name="5" onclick="kiKlikkel(this)">_</td>
+                            <td class="mill" name="7" onclick="kiKlikkel(this)">_</td>
+                        </tr>
+                        <tr>
+                            <td class="mill" name="8" onclick="kiKlikkel(this)">_</td>
+                            <td class="mill" name="1" onclick="kiKlikkel(this)">_</td>
+                            <td class="mill" name="6" onclick="kiKlikkel(this)">_</td>
+                        </tr>
+                    </thead>
+                </table>
+                <button id="twoPeopleButton" onclick="twoPeopleFunction()" type="button" class="m-3 button btn-sm btn-secondary">Játék egy másik személlyel</button>
+                <button id="gameWithStupidEngineButton" onclick="gameWithStupidEngineFunction()" type="m-3 button" class="button btn-sm btn-secondary">Most a buta gép lépjen!</button>
+                <button id="gepiTanulasButton" onclick="gepiTanulasFunction()" type="button" class="m-3 button btn-sm btn-secondary">Gépi tanulás</button>
+                <button id="gepiTanulasLenullazasaButton" onclick="gepiTanulasLenullázásaFunction()" type="button" class="m-3 button btn-sm btn-secondary">Gépi tanulás lenullázása</button>
+                <br>
+                <button id="newGameButton" onclick="newGameFunction()" type="button" class="button btn-sm btn-secondary">Új játék</button>
+                <p>Eredmény: <span id="winner"> - </span></p>
+                <p>Utolsó játékot nyerte: a <span id="uccsoWinner"> - </span></p>
+                <p>A játék állása: piros : kék = <span id="resultPlayer1"> 0 </span> : <span id="resultPlayer2"> 0 </span></p>
+                <button id="nullazas" onclick="szamlaloNullazasa()" type="button" class="button btn-sm btn-secondary">Számláló nullázása</button>
+                
+            </div>
+            <div class="col-2 col-sm-2 col-md-2 col-lg-2">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src=/js/malom.js></script>
+</body>
+
+</html>
