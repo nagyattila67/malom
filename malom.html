@@ -15,38 +15,109 @@
         <div class="row">
             <div class="col-2 col-sm-2 col-md-2 col-lg-2">
             </div>
-            <div class="col-8 col-sm-8 col-md-8 col-lg-8">
-                <table>
-                    <thead>
-                        <tr>
-                            <!--a bűvös négyzet oszlopai, sorai átlói mindig 15, más cellahármas nem-->
-                            <td class="mill" name="4" onclick="kiKlikkel(this)">_</td>
-                            <td class="mill" name="9" onclick="kiKlikkel(this)">_</td>
-                            <td class="mill" name="2" onclick="kiKlikkel(this)">_</td>
-                        </tr>
-                        <tr>
-                            <td class="mill" name="3" onclick="kiKlikkel(this)">_</td>
-                            <td class="mill" name="5" onclick="kiKlikkel(this)">_</td>
-                            <td class="mill" name="7" onclick="kiKlikkel(this)">_</td>
-                        </tr>
-                        <tr>
-                            <td class="mill" name="8" onclick="kiKlikkel(this)">_</td>
-                            <td class="mill" name="1" onclick="kiKlikkel(this)">_</td>
-                            <td class="mill" name="6" onclick="kiKlikkel(this)">_</td>
-                        </tr>
-                    </thead>
-                </table>
-                <button id="twoPeopleButton" onclick="twoPeopleFunction()" type="button" class="m-3 button btn-sm btn-secondary">Játék egy másik személlyel</button>
-                <button id="gameWithStupidEngineButton" onclick="gameWithStupidEngineFunction()" type="m-3 button" class="button btn-sm btn-secondary">Most a buta gép lépjen!</button>
-                <button id="gepiTanulasButton" onclick="gepiTanulasFunction()" type="button" class="m-3 button btn-sm btn-secondary">Gépi tanulás</button>
-                <button id="gepiTanulasLenullazasaButton" onclick="gepiTanulasLenullázásaFunction()" type="button" class="m-3 button btn-sm btn-secondary">Gépi tanulás lenullázása</button>
-                <br>
-                <button id="newGameButton" onclick="newGameFunction()" type="button" class="button btn-sm btn-secondary">Új játék</button>
-                <p>Eredmény: <span id="winner"> - </span></p>
-                <p>Utolsó játékot nyerte: a <span id="uccsoWinner"> - </span></p>
-                <p>A játék állása: piros : kék = <span id="resultPlayer1"> 0 </span> : <span id="resultPlayer2"> 0 </span></p>
-                <button id="nullazas" onclick="szamlaloNullazasa()" type="button" class="button btn-sm btn-secondary">Számláló nullázása</button>
-                
+            <div class="col-8 col-sm-8 col-md-8 col-lg-8"
+                style="border:1px solid #d3d3d3; background-color:#f6f6f6; padding:15px">
+                <div class=" mt-3 row">
+                    <div class="col-6">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <!--a bűvös négyzet oszlopai, sorai átlói mindig 15, más cellahármas nem-->
+                                    <td class="mill" name="4" onclick="kiKlikkel(this)">_</td>
+                                    <td class="mill" name="9" onclick="kiKlikkel(this)">_</td>
+                                    <td class="mill" name="2" onclick="kiKlikkel(this)">_</td>
+                                </tr>
+                                <tr>
+                                    <td class="mill" name="3" onclick="kiKlikkel(this)">_</td>
+                                    <td class="mill" name="5" onclick="kiKlikkel(this)">_</td>
+                                    <td class="mill" name="7" onclick="kiKlikkel(this)">_</td>
+                                </tr>
+                                <tr>
+                                    <td class="mill" name="8" onclick="kiKlikkel(this)">_</td>
+                                    <td class="mill" name="1" onclick="kiKlikkel(this)">_</td>
+                                    <td class="mill" name="6" onclick="kiKlikkel(this)">_</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="col-6">
+                        <button id="newGameButton" onclick="newGameFunction()" type="button"
+                            class="button btn-block btn-primary">Új játék</button>
+                        <button id="twoPeopleButton" onclick="twoPeopleFunction(this)" type="button"
+                            class="button btn-block btn-secondary">Játék egy másik személlyel</button>
+                            <p class="mt-3">először lépjen:  <input class="ml-2" id="firstRed" type="radio" name="firstÍStep"> a piros
+                                <input class="ml-2" id="firstBlue" type="radio" name="firstÍStep" checked> a kék 
+                            </p>
+                            <p class="mt-3">A gép mindig a pirossal lép.</p>
+                            <p class="mt-3">Az nyert, aki egy oszlopot, sort vagy átlót rakott ki a saját színével.</p>
+                            <hr>
+                            
+                        </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        
+
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-6">
+                        <button id="gameWithStupidEngineButton" onclick="gameWithStupidEngineFunction()"
+                            type="m-3 button" class="button btn-block btn-sm btn-info">Most a buta gép lépjen!</button>
+                        <button id="gameWithCleverEngineButton" onclick="gameWithCleverEngineFunction()"
+                            type="m-3 button" class="button btn-block btn-sm btn-info">Most az okos gép lépjen!</button>
+                        <br><br>
+                        <hr>
+                    </div>
+                    <div class="col-6" style="text-align:center">
+                        <button id="gepiTanulasButton" onclick="gepiTanulasFunction()" type="button"
+                            class="button btn-block btn-primary">Gépi tanulás</button>
+                        <span>A tanult játékok száma: <input class="m-2" style="width:90px" id="runNumber" value="1000"
+                                type="number"></span>
+                        <button id="gepiTanulasLenullazasaButton" onclick="gepiTanulasLenullázásaFunction()"
+                            type="button" class="button btn-block btn-secondary">Gépi tanulás lenullázása</button>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <p>A program beállítása: <span id="setting"></span></p>
+                        <p>Eredmény: <span id="winner"> - </span></p>
+                        <p>Utolsó játékot nyerte: a <span id="uccsoWinner"> - </span></p>
+                        <p>A játék állása: piros : kék = <span id="resultPlayer1"> 0 </span> : <span id="resultPlayer2">
+                                0
+                            </span></p>
+                        <button id="nullazas" onclick="szamlaloNullazasa()" type="button"
+                            class="button btn-block btn-secondary">Számláló nullázása</button>
+                    </div>
+                    <div class="col-6">
+                        <table class="table table-sm table-striped table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td>az eddig lejátszott tanulójátékok:</td>
+                                    <td colspan="2"><span id="allGames"> - </span></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>a piros nyert:</td>
+                                    <td><span id="redWon"> - </span></td>
+                                    <td><span id="redPercent"> - </span></td>
+                                </tr>
+                                <tr>
+                                    <td>a kék nyert:</td>
+                                    <td><span id="blueWon"> - </span></td>
+                                    <td><span id="bluePercent"> - </span></td>
+                                </tr>
+                                <tr>
+                                    <td>döntetlen lett:</td>
+                                    <td><span id="noWon"> - </span></td>
+                                    <td><span id="noWonPercent"> - </span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
             <div class="col-2 col-sm-2 col-md-2 col-lg-2">
             </div>
